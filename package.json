@@ -1,0 +1,23 @@
+{
+  "name": "keeping-alive-idle-servers",
+  "version": "1.0.0",
+  "description": "Some free hosting servers idling frequently so I made this simple Node Js backed app and chained it with others so servers can keep alive",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohammad-Mesbaul-Haque/Keeping-Alive-Idle-Servers.git"
+  },
+  "keywords": [
+    "NodeJs",
+    "Npm"
+  ],
+  "author": "Mohammad Mesbaul Haque",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mohammad-Mesbaul-Haque/Keeping-Alive-Idle-Servers/issues"
+  },
+  "homepage": "https://github.com/Mohammad-Mesbaul-Haque/Keeping-Alive-Idle-Servers#readme"
+}
