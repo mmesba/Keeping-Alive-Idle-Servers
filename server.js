@@ -16,7 +16,7 @@ let myHost = 'https://random-blogging-app.herokuapp.com';
 let myHost2 = 'https://boilerplate-project-exercisetracker-2.mohammadmesbaul.repl.co';
 
 // Send request to server
- let getFunc = ()=>{ https.get(myHost2, (res)=>{
+ let getFunc1 = ()=>{ https.get(myHost2, (res)=>{
     console.log('statusCode', res.statusCode);
     console.log('headers', res.headers);
     
@@ -30,9 +30,25 @@ let myHost2 = 'https://boilerplate-project-exercisetracker-2.mohammadmesbaul.rep
  
 }
 
+let getFunc2 = ()=>{ https.get(myHost, (res)=>{
+    console.log('statusCode', res.statusCode);
+    console.log('headers', res.headers);
+    
+    console.log('Pinging subsequently');
+    // res.on('data', (d)=>{
+    //     process.stdout.write(d)
+    // })
+ }).on('error', (e)=>{
+     console.log(e);
+ })
+ 
+}
+
+
 // Ping subsequently
 setInterval(() => {
-    getFunc()
+    getFunc1()
+    getFunc2()
 }, 1000*60*12);
  
 // export the module.
