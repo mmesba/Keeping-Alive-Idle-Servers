@@ -17,12 +17,14 @@ let myHost = 'https://random-blogging-app.herokuapp.com';
 let myHost2 = 'https://boilerplate-project-exercisetracker-2.mohammadmesbaul.repl.co';
 let myHost3 = "https://typing-test-demo.herokuapp.com";
 
+let myHost4 = "https://an001.azurewebsites.net/";
+
 // Send request to server
  let getFunc1 = ()=>{ https.get(myHost2, (res)=>{
-    console.log('statusCode', res.statusCode);
-    console.log('headers', res.headers);
+    console.log('statusCode blogging app', res.statusCode);
+    // console.log('headers', res.headers);
     
-    console.log('Pinging subsequently');
+    // console.log('Pinging subsequently');
     // res.on('data', (d)=>{
     //     process.stdout.write(d)
     // })
@@ -32,11 +34,12 @@ let myHost3 = "https://typing-test-demo.herokuapp.com";
  
 }
 
+// Exercise tracker
 let getFunc2 = ()=>{ https.get(myHost, (res)=>{
-    console.log('statusCode', res.statusCode);
-    console.log('headers', res.headers);
+    console.log('statusCode exercise tracker', res.statusCode);
+    // console.log('headers', res.headers);
     
-    console.log('Pinging subsequently');
+    // console.log('Pinging subsequently');
     // res.on('data', (d)=>{
     //     process.stdout.write(d)
     // })
@@ -46,12 +49,12 @@ let getFunc2 = ()=>{ https.get(myHost, (res)=>{
  
 }
 
-
+// Typing Test
 let getFunc3 = ()=>{ https.get(myHost3, (res)=>{
-    console.log('statusCode', res.statusCode);
-    console.log('headers', res.headers);
+    console.log('statusCode Typing app', res.statusCode);
+    // console.log('headers', res.headers);
     
-    console.log('Pinging subsequently');
+    // console.log('Pinging subsequently');
     // res.on('data', (d)=>{
     //     process.stdout.write(d)
     // })
@@ -61,14 +64,29 @@ let getFunc3 = ()=>{ https.get(myHost3, (res)=>{
  
 }
 
+let getFunc4 = ()=>{ https.get(myHost4, (res)=>{
+    console.log('statusCode azure', res.statusCode);
+    // console.log('headers azure', res.headers);
+    
+    // console.log('Pinging subsequently azure');
+    // res.on('data', (d)=>{
+    //     process.stdout.write(d)
+    // })
+ }).on('error', (e)=>{
+     console.log(e);
+ })
+ 
+}
 
 
 // Ping subsequently
 setInterval(() => {
     getFunc1()
-    getFunc2()
+    // getFunc2()
     getFunc3()
-}, 1000*5);
+    getFunc4()
+    console.log('-----');
+}, 1000*60);
 
 
 http.createServer( (req, res)=>{
